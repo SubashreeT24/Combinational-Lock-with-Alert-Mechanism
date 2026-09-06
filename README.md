@@ -48,22 +48,9 @@ To build a secure lock using combinational and sequential logic, with a warning 
 
 ## ⚙️ 5. Working
 
-```mermaid
-flowchart TD
-    A["4-bit input"] --> B["Stored via<br/>D Flip-Flops"]
-    B --> C["4-bit Comparator<br/>vs preset password"]
-    C -->|"Match"| D["✅ Green LED ON"]
-    C -->|"No Match"| E["1-bit Comparator<br/>detects wrong entry"]
-    E --> F["Count pulse sent to<br/>3-bit Counter"]
-    F --> G["3-bit Comparator<br/>checks count vs limit<br/>e.g. > 3 attempts"]
-    G -->|"Within limit"| A
-    G -->|"Limit exceeded"| H["🚨 Red LED ON<br/>(Alert)"]
-
-    classDef success fill:#0f5132,stroke:#0a3d26,color:#fff
-    classDef alert fill:#7a1f1f,stroke:#5c1717,color:#fff
-    class D success
-    class H alert
-```
+<p align="center">
+  <img src="docs/lock-working.svg" alt="Combinational Lock Working Diagram" width="700"/>
+</p>
 
 1. The **4-bit input** is stored using **D flip-flops**
 2. A **4-bit comparator** checks the input against the preset password
